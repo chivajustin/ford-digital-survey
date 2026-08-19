@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ការស្ទង់មតិវាយតម្លៃកម្រិត — Facebook Ads & ខ្លឹមសារច្នៃប្រឌិត</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kantumruy+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0f2a2e;
+    --teal:#0d5c63;
+    --teal-deep:#083c41;
+    --brass:#b6863c;
+    --brass-light:#e8c98a;
+    --paper:#faf7f1;
+    --card:#ffffff;
+    --line:#e4dfd3;
+    --muted:#6b7b7a;
+    --danger:#b3452f;
+    --ok:#2f7a52;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Kantumruy Pro', sans-serif;
+    background:
+      radial-gradient(circle at 15% 0%, #0d5c6314 0%, transparent 45%),
+      radial-gradient(circle at 100% 10%, #b6863c14 0%, transparent 40%),
+      var(--paper);
+    color:var(--ink);
+    line-height:1.65;
+    padding:0 0 60px;
+  }
+  .topbar{
+    background:linear-gradient(120deg, var(--teal-deep), var(--teal) 70%);
+    color:#fff;
+    padding:38px 20px 46px;
+    position:relative;
+    overflow:hidden;
+  }
+  .topbar::after{
+    content:"";
+    position:absolute;
+    right:-40px; top:-60px;
+    width:220px; height:220px;
+    border-radius:50%;
+    background:radial-gradient(circle, #b6863c55, transparent 70%);
+  }
+  .topbar-inner{max-width:720px; margin:0 auto; position:relative;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:13px; letter-spacing:.04em;
+    background:#ffffff1f; border:1px solid #ffffff3d;
+    padding:5px 12px; border-radius:999px;
+    margin-bottom:16px; color:var(--brass-light);
+  }
+  .topbar h1{
+    margin:0 0 10px;
+    font-size:26px;
+    font-weight:700;
+  }
+  .topbar p{
+    margin:0; color:#eaf3f1cc; font-size:15px; max-width:56ch;
+  }
+  main{max-width:720px; margin:-24px auto 0; padding:0 20px;}
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px;
+    margin-bottom:18px;
+    box-shadow:0 10px 30px -22px rgba(15,42,46,.4);
+  }
+  .section-title{
+    display:flex; align-items:baseline; gap:10px;
+    margin:0 0 4px;
+  }
+  .section-num{
+    font-family:'Kantumruy Pro', sans-serif;
+    font-weight:700; color:var(--brass);
+    font-size:14px;
+    border:1.5px solid var(--brass);
+    border-radius:50%;
+    width:26px; height:26px;
+    display:inline-flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .section-title h2{
+    font-size:18px; margin:0; font-weight:600; color:var(--teal-deep);
+  }
+  .section-sub{
+    margin:2px 0 20px 36px;
+    font-size:13.5px; color:var(--muted);
+  }
+  .field{margin-bottom:18px;}
+  .field:last-child{margin-bottom:0;}
+  label.q{
+    display:block;
+    font-weight:600;
+    font-size:15px;
+    margin-bottom:8px;
+    color:var(--ink);
+  }
+  label.q .req{color:var(--danger); margin-inline-start:3px;}
+  input[type="text"], input[type="number"], input[type="tel"], input[type="url"], textarea, select{
+    width:100%;
+    font-family:inherit;
+    font-size:15px;
+    padding:11px 13px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    background:#fffdfa;
+    color:var(--ink);
+    transition:border-color .15s, box-shadow .15s;
+  }
+  select{
+    appearance:none;
+    -webkit-appearance:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%230d5c63' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    padding-inline-end:36px;
+    cursor:pointer;
+  }
+  select:invalid{color:var(--muted);}
+  textarea{resize:vertical; min-height:80px;}
+  input:focus, textarea:focus{
+    outline:none;
+    border-color:var(--teal);
+    box-shadow:0 0 0 3px #0d5c6322;
+  }
+  .options{display:flex; flex-direction:column; gap:9px;}
+  .opt{
+    display:flex; align-items:flex-start; gap:10px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:11px 13px;
+    cursor:pointer;
+    transition:border-color .15s, background .15s;
+  }
+  .opt:hover{border-color:var(--brass);}
+  .opt input{margin-top:3px; accent-color:var(--teal); flex:none;}
+  .opt span{font-size:14.5px;}
+  .opt.checked{
+    border-color:var(--teal);
+    background:#0d5c6310;
+  }
+  .scale{
+    display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .scale label{
+    flex:1; min-width:64px;
+    text-align:center;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:10px 6px;
+    cursor:pointer;
+    font-size:13px;
+    transition:all .15s;
+  }
+  .scale input{position:absolute; opacity:0; pointer-events:none;}
+  .scale label span.num{display:block; font-weight:700; font-size:16px; color:var(--teal-deep);}
+  .scale input:checked + label,
+  .scale label.checked{
+    border-color:var(--teal);
+    background:var(--teal);
+    color:#fff;
+  }
+  .scale input:checked + label span.num,
+  .scale label.checked span.num{color:#fff;}
+  .hint{font-size:12.5px; color:var(--muted); margin-top:6px;}
+  .submit-wrap{text-align:center; margin-top:6px;}
+  button.submit{
+    font-family:inherit;
+    background:linear-gradient(120deg, var(--brass), #cf9f52);
+    color:#2a1c05;
+    border:none;
+    font-weight:700;
+    font-size:16px;
+    padding:14px 40px;
+    border-radius:999px;
+    cursor:pointer;
+    box-shadow:0 10px 22px -10px #b6863c88;
+    transition:transform .15s, box-shadow .15s;
+  }
+  button.submit:hover{transform:translateY(-1px); box-shadow:0 14px 26px -10px #b6863caa;}
+  button.submit:disabled{opacity:.6; cursor:not-allowed; transform:none;}
+  .status{
+    text-align:center; margin-top:14px; font-size:14px; font-weight:600; min-height:20px;
+  }
+  .status.ok{color:var(--ok);}
+  .status.err{color:var(--danger);}
+  .success-screen{
+    display:none;
+    text-align:center;
+    padding:50px 24px;
+  }
+  .success-screen .check{
+    width:64px; height:64px; border-radius:50%;
+    background:var(--ok); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:30px; margin:0 auto 18px;
+  }
+  .success-screen h2{margin:0 0 8px; color:var(--teal-deep);}
+  .success-screen p{color:var(--muted); margin:0;}
+  footer.note{
+    max-width:720px; margin:26px auto 0; padding:0 24px;
+    font-size:12.5px; color:var(--muted); text-align:center;
+  }
+  @media (max-width:480px){
+    .topbar{padding:30px 16px 40px;}
+    .topbar h1{font-size:22px;}
+    main{padding:0 14px;}
+    .card{padding:20px 16px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="eyebrow">សម្រាប់សិស្ស/និស្សិត — កម្ពុជា</span>
+    <h1>ការស្ទង់មតិវាយតម្លៃកម្រិតចំណេះដឹង</h1>
+    <p>Facebook Ads និង ការបង្កើតខ្លឹមសារច្នៃប្រឌិត (Creative Content)។ សូមឆ្លើយតាមការពិត ដើម្បីឲ្យយើងអាចដាក់អ្នកចូលកម្រិតសិក្សាដែលសមស្របបំផុត។</p>
+  </div>
+</div>
+
+<main>
+  <form id="surveyForm">
+
+    <!-- 1. Personal Info -->
+    <section class="card">
+      <div class="section-title"><span class="section-num">១</span><h2>ព័ត៌មានផ្ទាល់ខ្លួន</h2></div>
+      <p class="section-sub">ព័ត៌មានទាំងនេះនឹងត្រូវរក្សាទុកជាការសម្ងាត់</p>
+
+      <div class="field">
+        <label class="q" for="fullname">ឈ្មោះពេញ<span class="req">*</span></label>
+        <input type="text" id="fullname" name="ឈ្មោះពេញ" required placeholder="ឧ. សុខ សុភា">
+      </div>
+
+      <div class="field">
+        <label class="q" for="phone">លេខទូរស័ព្ទ (Telegram/WhatsApp)<span class="req">*</span></label>
+        <input type="tel" id="phone" name="លេខទូរស័ព្ទ" required placeholder="ឧ. 012 345 678">
+      </div>
+
+      <div class="field">
+        <label class="q">តួនាទី / មុខតំណែងក្នុងក្រុមការងារ Ford<span class="req">*</span></label>
+        <div class="options" data-name="តួនាទី">
+          <label class="opt"><input type="radio" name="តួនាទី" value="ជំនួយការផ្នែកលក់ (Sales Consultant)" required><span>ជំនួយការផ្នែកលក់ (Sales Consultant)</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី" value="អ្នកគ្រប់គ្រងផ្នែកលក់ (Sales Manager/Supervisor)"><span>អ្នកគ្រប់គ្រងផ្នែកលក់ (Sales Manager/Supervisor)</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី" value="ទីផ្សារឌីជីថល (Digital Marketing)"><span>ទីផ្សារឌីជីថល (Digital Marketing)</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី" value="ផ្នែកសេវាកម្មអតិថិជន (Customer Service/CRM)"><span>ផ្នែកសេវាកម្មអតិថិជន (Customer Service/CRM)</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី" value="ផ្សេងទៀត"><span>ផ្សេងទៀត</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q" for="showroom">Ford Team<span class="req">*</span></label>
+        <select id="showroom" name="Ford_Team" required>
+          <option value="" disabled selected>-- សូមជ្រើសរើស Team --</option>
+          <option value="Ford Monivong">Ford Monivong</option>
+          <option value="Ford Teuk Thla">Ford Teuk Thla</option>
+          <option value="Ford Toul Sangke">Ford Toul Sangke</option>
+          <option value="Ford Chroy Changvar">Ford Chroy Changvar</option>
+          <option value="Ford Phnom Penh Thmey">Ford Phnom Penh Thmey</option>
+          <option value="Ford Boeng Baitong">Ford Boeng Baitong</option>
+          <option value="Ford 2004">Ford 2004</option>
+          <option value="Ford Kampong Cham">Ford Kampong Cham</option>
+          <option value="Ford Siem Reap">Ford Siem Reap</option>
+          <option value="Ford Mean Chey">Ford Mean Chey</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label class="q" for="experience">ចំនួនឆ្នាំបទពិសោធន៍ក្នុងការលក់រថយន្ត Ford<span class="req">*</span></label>
+        <input type="number" id="experience" name="ចំនួនឆ្នាំបទពិសោធន៍_លក់_Ford" min="0" max="40" required placeholder="ឧ. 2">
+      </div>
+    </section>
+
+
+    <!-- 2. General experience -->
+    <section class="card">
+      <div class="section-title"><span class="section-num">២</span><h2>បទពិសោធន៍ទូទៅ</h2></div>
+      <p class="section-sub">Facebook Ads Manager</p>
+
+      <div class="field">
+        <label class="q">តើអ្នកធ្លាប់ប្រើប្រាស់ Facebook Ads Manager ដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="ការប្រើប្រាស់_Ads_Manager">
+          <label class="opt"><input type="radio" name="ការប្រើប្រាស់_Ads_Manager" value="ធ្លាប់ប្រើជាប្រចាំ" required><span>ធ្លាប់ប្រើជាប្រចាំ</span></label>
+          <label class="opt"><input type="radio" name="ការប្រើប្រាស់_Ads_Manager" value="ធ្លាប់សាកល្បងម្តងម្កាល"><span>ធ្លាប់សាកល្បងម្តងម្កាល</span></label>
+          <label class="opt"><input type="radio" name="ការប្រើប្រាស់_Ads_Manager" value="មិនទាន់ធ្លាប់ប្រើទេ"><span>មិនទាន់ធ្លាប់ប្រើទេ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">សូមវាយតម្លៃកម្រិតចំណេះដឹងទូទៅរបស់អ្នកលើ Facebook Ads<span class="req">*</span></label>
+        <div class="scale" data-name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads">
+          <input type="radio" id="fa1" name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads" value="1" required><label for="fa1"><span class="num">១</span>មិនចេះទាល់តែសោះ</label>
+          <input type="radio" id="fa2" name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads" value="2"><label for="fa2"><span class="num">២</span>ចេះបន្តិចបន្តួច</label>
+          <input type="radio" id="fa3" name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads" value="3"><label for="fa3"><span class="num">៣</span>មធ្យម</label>
+          <input type="radio" id="fa4" name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads" value="4"><label for="fa4"><span class="num">៤</span>ល្អ</label>
+          <input type="radio" id="fa5" name="កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads" value="5"><label for="fa5"><span class="num">៥</span>ជំនាញខ្ពស់</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Facebook Ads -->
+    <section class="card">
+      <div class="section-title"><span class="section-num">៣</span><h2>Facebook Ads</h2></div>
+      <p class="section-sub">សំណួរអំពី Boosting Facebook Ads</p>
+
+      <div class="field">
+        <label class="q">តើអ្នកធ្លាប់ប្រើប្រាស់ Boosting Facebook Ads ពីមុនដែរឬទេ? (សូមវាយតម្លៃកម្រិតជំនាញ)<span class="req">*</span></label>
+        <div class="scale" data-name="កម្រិត_បទពិសោធន៍_Boosting">
+          <input type="radio" id="be1" name="កម្រិត_បទពិសោធន៍_Boosting" value="1" required><label for="be1"><span class="num">១</span>មិនធ្លាប់ទាល់តែសោះ</label>
+          <input type="radio" id="be2" name="កម្រិត_បទពិសោធន៍_Boosting" value="2"><label for="be2"><span class="num">២</span>ធ្លាប់បន្តិចបន្តួច</label>
+          <input type="radio" id="be3" name="កម្រិត_បទពិសោធន៍_Boosting" value="3"><label for="be3"><span class="num">៣</span>មធ្យម</label>
+          <input type="radio" id="be4" name="កម្រិត_បទពិសោធន៍_Boosting" value="4"><label for="be4"><span class="num">៤</span>ល្អ</label>
+          <input type="radio" id="be5" name="កម្រិត_បទពិសោធន៍_Boosting" value="5"><label for="be5"><span class="num">៥</span>ជំនាញខ្ពស់</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើ Facebook account និង Page ទើបបង្កើតថ្មី អាចយកមក Boosting បានទេ?<span class="req">*</span></label>
+        <div class="options" data-name="គណនីទើបបង្កើត_Boosting">
+          <label class="opt"><input type="radio" name="គណនីទើបបង្កើត_Boosting" value="បានដែរ ប៉ុន្តែមានហានិភ័យខ្ពស់ (Account ថ្មីមិនទាន់មាន Trust/History ជាមួយ Facebook)" required><span>បានដែរ ប៉ុន្តែមានហានិភ័យខ្ពស់ (Account ថ្មីមិនទាន់មាន Trust/History ជាមួយ Facebook)</span></label>
+          <label class="opt"><input type="radio" name="គណនីទើបបង្កើត_Boosting" value="បានធម្មតា មិនមានបញ្ហាអ្វីទាំងអស់"><span>បានធម្មតា មិនមានបញ្ហាអ្វីទាំងអស់</span></label>
+          <label class="opt"><input type="radio" name="គណនីទើបបង្កើត_Boosting" value="មិនអាចទាល់តែសោះ"><span>មិនអាចទាល់តែសោះ</span></label>
+          <label class="opt"><input type="radio" name="គណនីទើបបង្កើត_Boosting" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកចេះរកកំហុសលើ Account និង Page ដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="ចេះរកកំហុស_Account_Page">
+          <label class="opt"><input type="radio" name="ចេះរកកំហុស_Account_Page" value="ចេះ" required><span>ចេះ</span></label>
+          <label class="opt"><input type="radio" name="ចេះរកកំហុស_Account_Page" value="ចេះខ្លះៗ"><span>ចេះខ្លះៗ</span></label>
+          <label class="opt"><input type="radio" name="ចេះរកកំហុស_Account_Page" value="មិនចេះ"><span>មិនចេះ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើត្រូវធ្វើដូចម្ដេចខ្លះទើប Facebook account មានសុវត្ថិភាព?<span class="req">*</span></label>
+        <div class="options" data-name="វិធីធានាសុវត្ថិភាព_Account">
+          <label class="opt"><input type="radio" name="វិធីធានាសុវត្ថិភាព_Account" value="បើក Two-Factor Authentication, verify email/phone, ប្រើ password រឹងមាំ, កុំចែករំលែក password ជាមួយអ្នកដទៃ" required><span>បើក Two-Factor Authentication, verify email/phone, ប្រើ password រឹងមាំ, កុំចែករំលែក password ជាមួយអ្នកដទៃ</span></label>
+          <label class="opt"><input type="radio" name="វិធីធានាសុវត្ថិភាព_Account" value="ប្តូរ password រាល់ថ្ងៃ"><span>ប្តូរ password រាល់ថ្ងៃ</span></label>
+          <label class="opt"><input type="radio" name="វិធីធានាសុវត្ថិភាព_Account" value="ចែករំលែក password ជាមួយសមាជិកក្រុមទាំងអស់ដើម្បីងាយស្រួល"><span>ចែករំលែក password ជាមួយសមាជិកក្រុមទាំងអស់ដើម្បីងាយស្រួល</span></label>
+          <label class="opt"><input type="radio" name="វិធីធានាសុវត្ថិភាព_Account" value="មិនចាំបាច់ធ្វើអ្វីទាំងអស់"><span>មិនចាំបាច់ធ្វើអ្វីទាំងអស់</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">នៅពេលអ្នកបានដំណើរការ Boosting Facebook Ads អ្វីខ្លះដែលអ្នកនឹងត្រូវទទួលបានត្រឡប់មកវិញ?<span class="req">*</span></label>
+        <div class="options" data-name="លទ្ធផលទទួលបានពី_Boosting">
+          <label class="opt"><input type="radio" name="លទ្ធផលទទួលបានពី_Boosting" value="លទ្ធផលអាស្រ័យលើ Objective ដែលបានជ្រើសរើស (ឧ. Reach, Engagement, Message, Sales)" required><span>លទ្ធផលអាស្រ័យលើ Objective ដែលបានជ្រើសរើស (ឧ. Reach, Engagement, Message, Sales)</span></label>
+          <label class="opt"><input type="radio" name="លទ្ធផលទទួលបានពី_Boosting" value="លុយត្រូវត្រឡប់មកវិញ១០០%"><span>លុយត្រូវត្រឡប់មកវិញ១០០%</span></label>
+          <label class="opt"><input type="radio" name="លទ្ធផលទទួលបានពី_Boosting" value="Page ត្រូវបាន verify ស្វ័យប្រវត្តិ"><span>Page ត្រូវបាន verify ស្វ័យប្រវត្តិ</span></label>
+          <label class="opt"><input type="radio" name="លទ្ធផលទទួលបានពី_Boosting" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្វីជា Reach?<span class="req">*</span></label>
+        <div class="options" data-name="និយមន័យ_Reach">
+          <label class="opt"><input type="radio" name="និយមន័យ_Reach" value="ចំនួនគណនីតែមួយគត់ដែលបានឃើញពាណិជ្ជកម្ម" required><span>ចំនួនគណនីតែមួយគត់ដែលបានឃើញពាណិជ្ជកម្ម</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Reach" value="ចំនួនដងសរុបនៃការបង្ហាញពាណិជ្ជកម្ម"><span>ចំនួនដងសរុបនៃការបង្ហាញពាណិជ្ជកម្ម</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Reach" value="ចំនួនអ្នកចុចលើពាណិជ្ជកម្ម"><span>ចំនួនអ្នកចុចលើពាណិជ្ជកម្ម</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Reach" value="ថវិកាដែលបានចំណាយ"><span>ថវិកាដែលបានចំណាយ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្វីជា Impression?<span class="req">*</span></label>
+        <div class="options" data-name="និយមន័យ_Impression">
+          <label class="opt"><input type="radio" name="និយមន័យ_Impression" value="ចំនួនដងសរុបដែលពាណិជ្ជកម្មត្រូវបានបង្ហាញ (អាចកើតឡើងច្រើនដងលើមនុស្សម្នាក់)" required><span>ចំនួនដងសរុបដែលពាណិជ្ជកម្មត្រូវបានបង្ហាញ (អាចកើតឡើងច្រើនដងលើមនុស្សម្នាក់)</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Impression" value="ចំនួនគណនីតែមួយគត់ដែលបានឃើញ"><span>ចំនួនគណនីតែមួយគត់ដែលបានឃើញ</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Impression" value="ចំនួនអ្នកចុចលើពាណិជ្ជកម្ម"><span>ចំនួនអ្នកចុចលើពាណិជ្ជកម្ម</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Impression" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្វីជា Frequency?<span class="req">*</span></label>
+        <div class="options" data-name="និយមន័យ_Frequency">
+          <label class="opt"><input type="radio" name="និយមន័យ_Frequency" value="ចំនួនមធ្យមដងដែលមនុស្សម្នាក់ឃើញពាណិជ្ជកម្ម (Impressions ÷ Reach)" required><span>ចំនួនមធ្យមដងដែលមនុស្សម្នាក់ឃើញពាណិជ្ជកម្ម (Impressions ÷ Reach)</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Frequency" value="ល្បឿននៃការចំណាយថវិកា"><span>ល្បឿននៃការចំណាយថវិកា</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Frequency" value="ចំនួន Engagement សរុប"><span>ចំនួន Engagement សរុប</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Frequency" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកគួរយល់ដឹង DNA របស់ Facebook Page (Insight, Audience, History) មុនឈានដល់ការចាប់ផ្ដើម Boosting ដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="យល់ដឹង_DNA_Page_មុន_Boosting">
+          <label class="opt"><input type="radio" name="យល់ដឹង_DNA_Page_មុន_Boosting" value="ត្រូវ គួរយល់ដឹងជាមុនសិន" required><span>ត្រូវ គួរយល់ដឹងជាមុនសិន</span></label>
+          <label class="opt"><input type="radio" name="យល់ដឹង_DNA_Page_មុន_Boosting" value="ខុស មិនចាំបាច់ទេ"><span>ខុស មិនចាំបាច់ទេ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកធ្លាប់ Boosting តាមរយៈ Campaign (ad set) ដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="បទពិសោធន៍_Boosting_តាម_Campaign">
+          <label class="opt"><input type="radio" name="បទពិសោធន៍_Boosting_តាម_Campaign" value="ធ្លាប់ជាប្រចាំ" required><span>ធ្លាប់ជាប្រចាំ</span></label>
+          <label class="opt"><input type="radio" name="បទពិសោធន៍_Boosting_តាម_Campaign" value="ធ្លាប់សាកល្បងម្តងម្កាល"><span>ធ្លាប់សាកល្បងម្តងម្កាល</span></label>
+          <label class="opt"><input type="radio" name="បទពិសោធន៍_Boosting_តាម_Campaign" value="មិនទាន់ធ្លាប់ទេ"><span>មិនទាន់ធ្លាប់ទេ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">សម្រាប់ការផ្សាយពាណិជ្ជកម្មរថយន្ត Ford តើ Campaign Objective មួយណាដែលអ្នកគួរប្រើប្រាស់?<span class="req">*</span></label>
+        <div class="options" data-name="ជ្រើសរើស_Campaign_Objective">
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Awareness — ធ្វើឲ្យមនុស្សឲ្យស្គាល់ម៉ូដែល/ Promotion ថ្មីរបស់ Ford ឲ្យបានច្រើនតាមដែលអាចធ្វើទៅបាន" required><span><strong>Awareness</strong> — ធ្វើឲ្យមនុស្សឲ្យស្គាល់ម៉ូដែល/ Promotion ថ្មីរបស់ Ford ឲ្យបានច្រើនតាមដែលអាចធ្វើទៅបាន</span></label>
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Traffic — នាំចរាចរចូលទៅកាន់ Website, Landing Page ឬ Messenger ដើម្បីមើលព័ត៌មានលម្អិត"><span><strong>Traffic</strong> — នាំចរាចរចូលទៅកាន់ Website, Landing Page ឬ Messenger ដើម្បីមើលព័ត៌មានលម្អិត</span></label>
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Engagement — ជំរុញឲ្យមាន Like, Comment, Share ឬ Video View លើ Content ដើម្បីបង្កើន Interaction"><span><strong>Engagement</strong> — ជំរុញឲ្យមាន Like, Comment, Share ឬ Video View លើ Content ដើម្បីបង្កើន Interaction</span></label>
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Leads — ប្រមូល Contact/Lead Form ពីអតិថិជនដែលចាប់អារម្មណ៍ ដើម្បីឲ្យក្រុមលក់ទាក់ទងតាមក្រោយ"><span><strong>Leads</strong> — ប្រមូល Contact/Lead Form ពីអតិថិជនដែលចាប់អារម្មណ៍ ដើម្បីឲ្យក្រុមលក់ទាក់ទងតាមក្រោយ</span></label>
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Appointment — លើកទឹកចិត្តអតិថិជនកក់ម៉ោង Test Drive ឬចូលទស្សនា Showroom"><span><strong>Appointment</strong> — លើកទឹកចិត្តអតិថិជនកក់ម៉ោង Test Drive ឬចូលទស្សនា Showroom</span></label>
+          <label class="opt"><input type="radio" name="ជ្រើសរើស_Campaign_Objective" value="Sales / Conversions — ជំរុញការទិញ ឬសកម្មភាព Conversion ជាក់លាក់ (ឧ. ការកក់ប្រាក់, Order Online)"><span><strong>Sales / Conversions</strong> — ជំរុញការទិញ ឬសកម្មភាព Conversion ជាក់លាក់ (ឧ. ការកក់ប្រាក់, Order Online)</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើការរៀបចំ Campaign/Ad set budget មានប៉ុន្មានប្រភេទ?<span class="req">*</span></label>
+        <div class="options" data-name="ចំនួនប្រភេទ_Budget">
+          <label class="opt"><input type="radio" name="ចំនួនប្រភេទ_Budget" value="២ប្រភេទ (Daily Budget និង Lifetime Budget)" required><span>២ប្រភេទ (Daily Budget និង Lifetime Budget)</span></label>
+          <label class="opt"><input type="radio" name="ចំនួនប្រភេទ_Budget" value="៣ប្រភេទ"><span>៣ប្រភេទ</span></label>
+          <label class="opt"><input type="radio" name="ចំនួនប្រភេទ_Budget" value="៤ប្រភេទ"><span>៤ប្រភេទ</span></label>
+          <label class="opt"><input type="radio" name="ចំនួនប្រភេទ_Budget" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើប្រើប្រាស់ Daily Budget ឬ Lifetime Budget មួយណាល្អជាង?<span class="req">*</span></label>
+        <div class="options" data-name="Daily_vs_Lifetime_Budget">
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="អាស្រ័យលើគោលដៅ និងរយៈពេលនៃយុទ្ធនាការ" required><span>អាស្រ័យលើគោលដៅ និងរយៈពេលនៃយុទ្ធនាការ</span></label>
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Daily Budget ល្អជាងគ្រប់ករណី"><span>Daily Budget ល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Lifetime Budget ល្អជាងគ្រប់ករណី"><span>Lifetime Budget ល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើ Ad set ក្នុង Campaign មានតួនាទីធ្វើអ្វី?<span class="req">*</span></label>
+        <div class="options" data-name="តួនាទី_Ad_Set">
+          <label class="opt"><input type="radio" name="តួនាទី_Ad_Set" value="កំណត់ Audience, Placement, Budget និង Schedule សម្រាប់ក្រុមពាណិជ្ជកម្មនីមួយៗ" required><span>កំណត់ Audience, Placement, Budget និង Schedule សម្រាប់ក្រុមពាណិជ្ជកម្មនីមួយៗ</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី_Ad_Set" value="បង្កើត Page Facebook ថ្មី"><span>បង្កើត Page Facebook ថ្មី</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី_Ad_Set" value="រចនារូបភាពពាណិជ្ជកម្ម"><span>រចនារូបភាពពាណិជ្ជកម្ម</span></label>
+          <label class="opt"><input type="radio" name="តួនាទី_Ad_Set" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើការកំណត់ Audience ដោយប្រើប្រាស់ AI (Advantage+ Audience) ឬកំណត់ដោយខ្លួនឯង (Manual) មួយណាល្អជាង?<span class="req">*</span></label>
+        <div class="options" data-name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង">
+          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="អាស្រ័យលើទិន្នន័យដែលមាន និងគោលដៅយុទ្ធនាការ" required><span>អាស្រ័យលើទិន្នន័យដែលមាន និងគោលដៅយុទ្ធនាការ</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាងគ្រប់ករណី"><span>AI ល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី"><span>កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើការកំណត់ Placement ដោយប្រើប្រាស់ AI (Advantage+ Placements) ឬកំណត់ដោយខ្លួនឯង មួយណាល្អជាង?<span class="req">*</span></label>
+        <div class="options" data-name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង">
+          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="អាស្រ័យលើលទ្ធផលនិង Budget ដែលមាន" required><span>អាស្រ័យលើលទ្ធផលនិង Budget ដែលមាន</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាងគ្រប់ករណី"><span>AI ល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី"><span>កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">កំឡុងពេល Boosting កំពុងដំណើរការល្អ តើគួរកែប្រែមាតិកា, ពេលវេលា, ឬចំនួនទឹកប្រាក់ដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="គួរកែពេល_Boosting_ដំណើរការល្អ">
+          <label class="opt"><input type="radio" name="គួរកែពេល_Boosting_ដំណើរការល្អ" value="ខុស — មិនគួរកែ ព្រោះនឹងធ្វើឲ្យ Algorithm ចាប់ផ្ដើម Learning Phase ថ្មី" required><span>ខុស — មិនគួរកែ ព្រោះនឹងធ្វើឲ្យ Algorithm ចាប់ផ្ដើម Learning Phase ថ្មី</span></label>
+          <label class="opt"><input type="radio" name="គួរកែពេល_Boosting_ដំណើរការល្អ" value="ត្រូវ — គួរកែឲ្យបានញឹកញាប់"><span>ត្រូវ — គួរកែឲ្យបានញឹកញាប់</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកចេះវាយតម្លៃលើ Boosting Campaign ដែរឬទេ? (សូមវាយតម្លៃកម្រិតជំនាញ)<span class="req">*</span></label>
+        <div class="scale" data-name="កម្រិត_វាយតម្លៃ_Boosting_Campaign">
+          <input type="radio" id="bv1" name="កម្រិត_វាយតម្លៃ_Boosting_Campaign" value="1" required><label for="bv1"><span class="num">១</span>មិនចេះទាល់តែសោះ</label>
+          <input type="radio" id="bv2" name="កម្រិត_វាយតម្លៃ_Boosting_Campaign" value="2"><label for="bv2"><span class="num">២</span>ចេះបន្តិចបន្តួច</label>
+          <input type="radio" id="bv3" name="កម្រិត_វាយតម្លៃ_Boosting_Campaign" value="3"><label for="bv3"><span class="num">៣</span>មធ្យម</label>
+          <input type="radio" id="bv4" name="កម្រិត_វាយតម្លៃ_Boosting_Campaign" value="4"><label for="bv4"><span class="num">៤</span>ល្អ</label>
+          <input type="radio" id="bv5" name="កម្រិត_វាយតម្លៃ_Boosting_Campaign" value="5"><label for="bv5"><span class="num">៥</span>ជំនាញខ្ពស់</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកគួរធ្វើដូចម្ដេច នៅពេល Boosting ads មាន Spam Message ច្រើន?<span class="req">*</span></label>
+        <div class="options" data-name="ដោះស្រាយ_Spam_Message">
+          <label class="opt"><input type="radio" name="ដោះស្រាយ_Spam_Message" value="បន្ត Boosting ដដែល ព្រមទាំង Block/Report Spam Account រហូតដល់បានអតិថិជនពិត" required><span>បន្ត Boosting ដដែល ព្រមទាំង Block/Report Spam Account រហូតដល់បានអតិថិជនពិត</span></label>
+          <label class="opt"><input type="radio" name="ដោះស្រាយ_Spam_Message" value="បិទ Ad set ភ្លាមៗ"><span>បិទ Ad set ភ្លាមៗ</span></label>
+          <label class="opt"><input type="radio" name="ដោះស្រាយ_Spam_Message" value="លុប Page ចោល"><span>លុប Page ចោល</span></label>
+          <label class="opt"><input type="radio" name="ដោះស្រាយ_Spam_Message" value="មិនធ្វើអ្វីទាំងអស់"><span>មិនធ្វើអ្វីទាំងអស់</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Content Media -->
+    <section class="card">
+      <div class="section-title"><span class="section-num">៤</span><h2>Content Media (Photo / Video)</h2></div>
+      <p class="section-sub">ជំនាញផលិត និងគ្រប់គ្រងខ្លឹមសារ</p>
+
+      <div class="field">
+        <label class="q">តើគួរ Post Content ប៉ុន្មានក្នុងមួយសប្តាហ៍ ទើបល្អសម្រាប់ Page របស់អ្នក?<span class="req">*</span></label>
+        <div class="options" data-name="ចំនួន_Content_ក្នុងមួយសប្តាហ៍">
+          <label class="opt"><input type="radio" name="ចំនួន_Content_ក្នុងមួយសប្តាហ៍" value="ចន្លោះ ៣-៥ Content ក្នុងមួយសប្តាហ៍" required><span>ចន្លោះ ៣-៥ Content ក្នុងមួយសប្តាហ៍</span></label>
+          <label class="opt"><input type="radio" name="ចំនួន_Content_ក្នុងមួយសប្តាហ៍" value="រាល់ថ្ងៃ (១-២ Content ក្នុងមួយថ្ងៃ)"><span>រាល់ថ្ងៃ (១-២ Content ក្នុងមួយថ្ងៃ)</span></label>
+          <label class="opt"><input type="radio" name="ចំនួន_Content_ក្នុងមួយសប្តាហ៍" value="១ Content ក្នុងមួយសប្តាហ៍"><span>១ Content ក្នុងមួយសប្តាហ៍</span></label>
+          <label class="opt"><input type="radio" name="ចំនួន_Content_ក្នុងមួយសប្តាហ៍" value="មិនកំណត់ ដាក់នៅពេលណាក៏បាន"><span>មិនកំណត់ ដាក់នៅពេលណាក៏បាន</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នកចេះវាយតម្លៃលើគុណភាព Content របស់អ្នកដែរឬទេ បន្ទាប់ពី Post រួច? (សូមវាយតម្លៃកម្រិតជំនាញ)<span class="req">*</span></label>
+        <div class="scale" data-name="កម្រិត_វាយតម្លៃគុណភាព_Content">
+          <input type="radio" id="cq1" name="កម្រិត_វាយតម្លៃគុណភាព_Content" value="1" required><label for="cq1"><span class="num">១</span>មិនចេះទាល់តែសោះ</label>
+          <input type="radio" id="cq2" name="កម្រិត_វាយតម្លៃគុណភាព_Content" value="2"><label for="cq2"><span class="num">២</span>ចេះបន្តិចបន្តួច</label>
+          <input type="radio" id="cq3" name="កម្រិត_វាយតម្លៃគុណភាព_Content" value="3"><label for="cq3"><span class="num">៣</span>មធ្យម</label>
+          <input type="radio" id="cq4" name="កម្រិត_វាយតម្លៃគុណភាព_Content" value="4"><label for="cq4"><span class="num">៤</span>ល្អ</label>
+          <input type="radio" id="cq5" name="កម្រិត_វាយតម្លៃគុណភាព_Content" value="5"><label for="cq5"><span class="num">៥</span>ជំនាញខ្ពស់</label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">Content ល្អដែលមានអ្នកមើលច្រើន គឺអាស្រ័យទៅលើ Page ដែលមាន Follower ច្រើន (ខុស ឬ ត្រូវ?)<span class="req">*</span></label>
+        <div class="options" data-name="Content_អាស្រ័យលើ_Follower_ច្រើន">
+          <label class="opt"><input type="radio" name="Content_អាស្រ័យលើ_Follower_ច្រើន" value="ខុស — គុណភាព Content សំខាន់ជាងចំនួន Follower" required><span>ខុស — គុណភាព Content សំខាន់ជាងចំនួន Follower</span></label>
+          <label class="opt"><input type="radio" name="Content_អាស្រ័យលើ_Follower_ច្រើន" value="ត្រូវ"><span>ត្រូវ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្នករៀបចំកាលបរិច្ឆេទឱ្យបានត្រឹមត្រូវ ក្នុងការបញ្ចេញមាតិកានីមួយៗដែរឬទេ?<span class="req">*</span></label>
+        <div class="options" data-name="រៀបចំកាលបរិច្ឆេទ_Content">
+          <label class="opt"><input type="radio" name="រៀបចំកាលបរិច្ឆេទ_Content" value="ធ្វើជាប្រចាំ (មាន Content Calendar)" required><span>ធ្វើជាប្រចាំ (មាន Content Calendar)</span></label>
+          <label class="opt"><input type="radio" name="រៀបចំកាលបរិច្ឆេទ_Content" value="ធ្វើម្តងម្កាល"><span>ធ្វើម្តងម្កាល</span></label>
+          <label class="opt"><input type="radio" name="រៀបចំកាលបរិច្ឆេទ_Content" value="មិនធ្លាប់រៀបចំទេ"><span>មិនធ្លាប់រៀបចំទេ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើអ្វីជា Hook ដែលត្រូវដាក់លើវីដេអូ?<span class="req">*</span></label>
+        <div class="options" data-name="និយមន័យ_Hook">
+          <label class="opt"><input type="radio" name="និយមន័យ_Hook" value="ផ្នែកដំបូងបំផុតនៃវីដេអូ (២-៣វិនាទីដំបូង) ដែលទាក់ទាញអារម្មណ៍ឲ្យបន្តមើលទៀត" required><span>ផ្នែកដំបូងបំផុតនៃវីដេអូ (២-៣វិនាទីដំបូង) ដែលទាក់ទាញអារម្មណ៍ឲ្យបន្តមើលទៀត</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Hook" value="តន្ត្រីផ្ទៃខាងក្រោយនៃវីដេអូ"><span>តន្ត្រីផ្ទៃខាងក្រោយនៃវីដេអូ</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Hook" value="Logo របស់ Page"><span>Logo របស់ Page</span></label>
+          <label class="opt"><input type="radio" name="និយមន័យ_Hook" value="Caption នៅខាងក្រោមវីដេអូ"><span>Caption នៅខាងក្រោមវីដេអូ</span></label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="q">តើ Average Viewer ត្រូវមើលប៉ុន្មានភាគរយនៃវីដេអូ ទើបគិតថា Content បានទទួលការចាប់អារម្មណ៍ខ្ពស់?<span class="req">*</span></label>
+        <div class="options" data-name="រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍">
+          <label class="opt"><input type="radio" name="រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍" value="លើសពី ៥០% នៃរយៈពេលវីដេអូទាំងមូល" required><span>លើសពី ៥០% នៃរយៈពេលវីដេអូទាំងមូល</span></label>
+          <label class="opt"><input type="radio" name="រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍" value="គ្រាន់តែ ៣វិនាទីដំបូងគត់"><span>គ្រាន់តែ ៣វិនាទីដំបូងគត់</span></label>
+          <label class="opt"><input type="radio" name="រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍" value="មិនចាំបាច់មើលទាំងអស់ក៏បាន"><span>មិនចាំបាច់មើលទាំងអស់ក៏បាន</span></label>
+          <label class="opt"><input type="radio" name="រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. Additional -->
+    <section class="card">
+      <div class="section-title"><span class="section-num">៥</span><h2>មតិយោបល់បន្ថែម</h2></div>
+      <div class="field">
+        <label class="q" for="comment">មានអ្វីចង់បន្ថែមទៀតទេ?</label>
+        <textarea id="comment" name="មតិយោបល់បន្ថែម" placeholder="សរសេរនៅទីនេះ..."></textarea>
+      </div>
+    </section>
+
+    <div class="submit-wrap">
+      <button type="submit" class="submit" id="submitBtn">ដាក់ស្នើចម្លើយ</button>
+      <p class="status" id="statusMsg"></p>
+    </div>
+  </form>
+
+  <div class="success-screen" id="successScreen">
+    <div class="check">✓</div>
+    <h2>អរគុណសម្រាប់ការចូលរួម!</h2>
+    <p>ចម្លើយរបស់អ្នកត្រូវបានកត់ត្រាដោយជោគជ័យ។ ក្រុមការងារនឹងទាក់ទងអ្នកវិញឆាប់ៗនេះ។</p>
+  </div>
+</main>
+
+<footer class="note">ព័ត៌មានរបស់អ្នកនឹងត្រូវប្រើសម្រាប់គោលបំណងវាយតម្លៃកម្រិត និងចាត់ថ្នាក់សិក្សាតែប៉ុណ្ណោះ។</footer>
+
+<script>
+  // ⚠️ ជំនួស URL ខាងក្រោមដោយ Google Apps Script Web App URL របស់អ្នក
+  // (មើលការណែនាំក្នុងឯកសារ google-apps-script.gs ភ្ជាប់មកជាមួយ)
+  const SCRIPT_URL = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
+
+  // highlight selected radio/checkbox options visually
+  document.querySelectorAll('.opt').forEach(opt => {
+    const input = opt.querySelector('input');
+    input.addEventListener('change', () => {
+      const group = opt.closest('.options');
+      group.querySelectorAll('.opt').forEach(o => o.classList.remove('checked'));
+      if (input.type === 'checkbox') {
+        opt.classList.toggle('checked', input.checked);
+      } else {
+        group.querySelectorAll('.opt').forEach(o => {
+          o.classList.toggle('checked', o.querySelector('input').checked);
+        });
+      }
+    });
+  });
+
+  const form = document.getElementById('surveyForm');
+  const statusMsg = document.getElementById('statusMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    statusMsg.textContent = '';
+    statusMsg.className = 'status';
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'កំពុងបញ្ជូន...';
+
+    const formData = new FormData(form);
+    formData.append('ពេលវេលាដាក់ស្នើ', new Date().toLocaleString('km-KH'));
+
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors', // Apps Script web apps don't return CORS headers
+        body: formData
+      });
+      // no-cors means we can't read the response — assume success
+      form.style.display = 'none';
+      document.getElementById('successScreen').style.display = 'block';
+      document.getElementById('successScreen').scrollIntoView({behavior:'smooth'});
+    } catch (err) {
+      statusMsg.textContent = 'មានបញ្ហាក្នុងការបញ្ជូន សូមព្យាយាមម្តងទៀត។';
+      statusMsg.className = 'status err';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'ដាក់ស្នើចម្លើយ';
+    }
+  });
+</script>
+
+</body>
+</html>
