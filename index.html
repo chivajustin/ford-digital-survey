@@ -203,9 +203,42 @@
     background:var(--ok); color:#fff;
     display:flex; align-items:center; justify-content:center;
     font-size:30px; margin:0 auto 18px;
+    transition:background .2s;
   }
   .success-screen h2{margin:0 0 8px; color:var(--teal-deep);}
   .success-screen p{color:var(--muted); margin:0;}
+  .score-card{
+    max-width:380px; margin:24px auto 0;
+    background:var(--paper);
+    border:1.5px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px 20px;
+    text-align:center;
+  }
+  .score-percent{
+    font-size:44px; font-weight:700; color:var(--teal-deep); line-height:1;
+  }
+  .score-level{
+    display:inline-block;
+    margin:10px 0 16px;
+    padding:6px 18px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:14px;
+  }
+  .score-level.poor{background:#f6ded7; color:#8a3521;}
+  .score-level.fair{background:#f6ecd2; color:#8a6a17;}
+  .score-level.good{background:#dcefe2; color:#1f6a41;}
+  .score-breakdown{
+    display:flex; justify-content:space-between; gap:12px;
+    text-align:left;
+    border-top:1px solid var(--line);
+    padding-top:14px;
+    margin-top:4px;
+  }
+  .score-breakdown .item{flex:1;}
+  .score-breakdown .item .label{font-size:12px; color:var(--muted); margin-bottom:3px;}
+  .score-breakdown .item .value{font-size:16px; font-weight:700; color:var(--ink);}
   footer.note{
     max-width:720px; margin:26px auto 0; padding:0 24px;
     font-size:12.5px; color:var(--muted); text-align:center;
@@ -222,7 +255,7 @@
 
 <div class="topbar">
   <div class="topbar-inner">
-    <span class="eyebrow">Ford Traning Course</span>
+    <span class="eyebrow">សម្រាប់សិស្ស/និស្សិត — កម្ពុជា</span>
     <h1>ការស្ទង់មតិវាយតម្លៃកម្រិតចំណេះដឹង</h1>
     <p>Facebook Ads និង ការបង្កើតខ្លឹមសារច្នៃប្រឌិត (Creative Content)។ សូមឆ្លើយតាមការពិត ដើម្បីឲ្យយើងអាចដាក់អ្នកចូលកម្រិតសិក្សាដែលសមស្របបំផុត។</p>
   </div>
@@ -271,6 +304,12 @@
           <option value="Ford Kampong Cham">Ford Kampong Cham</option>
           <option value="Ford Siem Reap">Ford Siem Reap</option>
           <option value="Ford Mean Chey">Ford Mean Chey</option>
+          <option value="Ford Mean Chey">Ford Mean Chey</option>
+          <option value="Ford Mean Chey">Ford Corporate 1</option>
+          <option value="Ford Mean Chey">Ford Corporate 2</option>
+          <option value="Ford Mean Chey">Ford Outdoor</option>
+          <option value="Ford Mean Chey">Ford Goverment</option>
+          <option value="Ford Mean Chey">Ford Battambang</option>
         </select>
       </div>
 
@@ -435,8 +474,8 @@
         <label class="q">តើប្រើប្រាស់ Daily Budget ឬ Lifetime Budget មួយណាល្អជាង?<span class="req">*</span></label>
         <div class="options" data-name="Daily_vs_Lifetime_Budget">
           <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="អាស្រ័យលើគោលដៅ និងរយៈពេលនៃយុទ្ធនាការ" required><span>អាស្រ័យលើគោលដៅ និងរយៈពេលនៃយុទ្ធនាការ</span></label>
-          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Daily Budget ល្អជាងគ្រប់ករណី"><span>Daily Budget ល្អជាងគ្រប់ករណី</span></label>
-          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Lifetime Budget ល្អជាងគ្រប់ករណី"><span>Lifetime Budget ល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Daily Budget ល្អជាង"><span>Daily Budget ល្អជាងគ្រប់</span></label>
+          <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="Lifetime Budget ល្អជាង"><span>Lifetime Budget ល្អជាងគ្រប់</span></label>
           <label class="opt"><input type="radio" name="Daily_vs_Lifetime_Budget" value="មិនប្រាកដ / មិនដឹង"><span>មិនប្រាកដ / មិនដឹង</span></label>
         </div>
       </div>
@@ -455,8 +494,8 @@
         <label class="q">តើការកំណត់ Audience ដោយប្រើប្រាស់ AI (Advantage+ Audience) ឬកំណត់ដោយខ្លួនឯង (Manual) មួយណាល្អជាង?<span class="req">*</span></label>
         <div class="options" data-name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង">
           <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="អាស្រ័យលើទិន្នន័យដែលមាន និងគោលដៅយុទ្ធនាការ" required><span>អាស្រ័យលើទិន្នន័យដែលមាន និងគោលដៅយុទ្ធនាការ</span></label>
-          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាងគ្រប់ករណី"><span>AI ល្អជាងគ្រប់ករណី</span></label>
-          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី"><span>កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាង"><span>AI ល្អជាង</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Audience_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជា"><span>កំណត់ដោយខ្លួនឯងល្អជាង</span></label>
         </div>
       </div>
 
@@ -464,8 +503,8 @@
         <label class="q">តើការកំណត់ Placement ដោយប្រើប្រាស់ AI (Advantage+ Placements) ឬកំណត់ដោយខ្លួនឯង មួយណាល្អជាង?<span class="req">*</span></label>
         <div class="options" data-name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង">
           <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="អាស្រ័យលើលទ្ធផលនិង Budget ដែលមាន" required><span>អាស្រ័យលើលទ្ធផលនិង Budget ដែលមាន</span></label>
-          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាងគ្រប់ករណី"><span>AI ល្អជាងគ្រប់ករណី</span></label>
-          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី"><span>កំណត់ដោយខ្លួនឯងល្អជាងគ្រប់ករណី</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="AI ល្អជាង"><span>AI ល្អជាង</span></label>
+          <label class="opt"><input type="radio" name="កំណត់_Placement_AI_ឬ_ខ្លួនឯង" value="កំណត់ដោយខ្លួនឯងល្អជាង"><span>កំណត់ដោយខ្លួនឯងល្អជាង</span></label>
         </div>
       </div>
 
@@ -580,9 +619,24 @@
   </form>
 
   <div class="success-screen" id="successScreen">
-    <div class="check">✓</div>
+    <div class="check" id="scoreCheck">✓</div>
     <h2>អរគុណសម្រាប់ការចូលរួម!</h2>
     <p>ចម្លើយរបស់អ្នកត្រូវបានកត់ត្រាដោយជោគជ័យ។ ក្រុមការងារនឹងទាក់ទងអ្នកវិញឆាប់ៗនេះ។</p>
+
+    <div class="score-card">
+      <div class="score-percent" id="scorePercent">0%</div>
+      <span class="score-level" id="scoreLevel">-</span>
+      <div class="score-breakdown">
+        <div class="item">
+          <div class="label">ចំណេះដឹង (Facebook Ads)</div>
+          <div class="value" id="scoreKnowledge">0/0</div>
+        </div>
+        <div class="item">
+          <div class="label">វាយតម្លៃខ្លួនឯង</div>
+          <div class="value" id="scoreSelfRating">0/5</div>
+        </div>
+      </div>
+    </div>
   </div>
 </main>
 
@@ -591,7 +645,7 @@
 <script>
   // ⚠️ ជំនួស URL ខាងក្រោមដោយ Google Apps Script Web App URL របស់អ្នក
   // (មើលការណែនាំក្នុងឯកសារ google-apps-script.gs ភ្ជាប់មកជាមួយ)
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzZQF5fly677U7HisDSFEeWdOq8g_awBuDKswhgQnvycUZ8ZtR4KBSUNCGwH4WYkLvj/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/REPLACE_WITH_YOUR_DEPLOYMENT_ID/exec";
 
   // highlight selected radio/checkbox options visually
   document.querySelectorAll('.opt').forEach(opt => {
@@ -613,6 +667,65 @@
   const statusMsg = document.getElementById('statusMsg');
   const submitBtn = document.getElementById('submitBtn');
 
+  // ចម្លើយត្រឹមត្រូវសម្រាប់សំណួរចំណេះដឹង Facebook Ads / Content Media
+  const KNOWLEDGE_ANSWERS = {
+    "គណនីទើបបង្កើត_Boosting": "បានដែរ ប៉ុន្តែមានហានិភ័យខ្ពស់ (Account ថ្មីមិនទាន់មាន Trust/History ជាមួយ Facebook)",
+    "វិធីធានាសុវត្ថិភាព_Account": "បើក Two-Factor Authentication, verify email/phone, ប្រើ password រឹងមាំ, កុំចែករំលែក password ជាមួយអ្នកដទៃ",
+    "លទ្ធផលទទួលបានពី_Boosting": "លទ្ធផលអាស្រ័យលើ Objective ដែលបានជ្រើសរើស (ឧ. Reach, Engagement, Message, Sales)",
+    "និយមន័យ_Reach": "ចំនួនគណនីតែមួយគត់ដែលបានឃើញពាណិជ្ជកម្ម",
+    "និយមន័យ_Impression": "ចំនួនដងសរុបដែលពាណិជ្ជកម្មត្រូវបានបង្ហាញ (អាចកើតឡើងច្រើនដងលើមនុស្សម្នាក់)",
+    "និយមន័យ_Frequency": "ចំនួនមធ្យមដងដែលមនុស្សម្នាក់ឃើញពាណិជ្ជកម្ម (Impressions ÷ Reach)",
+    "យល់ដឹង_DNA_Page_មុន_Boosting": "ត្រូវ គួរយល់ដឹងជាមុនសិន",
+    "ចំនួនប្រភេទ_Budget": "២ប្រភេទ (Daily Budget និង Lifetime Budget)",
+    "Daily_vs_Lifetime_Budget": "អាស្រ័យលើគោលដៅ និងរយៈពេលនៃយុទ្ធនាការ",
+    "តួនាទី_Ad_Set": "កំណត់ Audience, Placement, Budget និង Schedule សម្រាប់ក្រុមពាណិជ្ជកម្មនីមួយៗ",
+    "កំណត់_Audience_AI_ឬ_ខ្លួនឯង": "អាស្រ័យលើទិន្នន័យដែលមាន និងគោលដៅយុទ្ធនាការ",
+    "កំណត់_Placement_AI_ឬ_ខ្លួនឯង": "អាស្រ័យលើលទ្ធផលនិង Budget ដែលមាន",
+    "គួរកែពេល_Boosting_ដំណើរការល្អ": "ខុស — មិនគួរកែ ព្រោះនឹងធ្វើឲ្យ Algorithm ចាប់ផ្ដើម Learning Phase ថ្មី",
+    "ដោះស្រាយ_Spam_Message": "បន្ត Boosting ដដែល ព្រមទាំង Block/Report Spam Account រហូតដល់បានអតិថិជនពិត",
+    "ចំនួន_Content_ក្នុងមួយសប្តាហ៍": "ចន្លោះ ៣-៥ Content ក្នុងមួយសប្តាហ៍",
+    "Content_អាស្រ័យលើ_Follower_ច្រើន": "ខុស — គុណភាព Content សំខាន់ជាងចំនួន Follower",
+    "រៀបចំកាលបរិច្ឆេទ_Content": "ធ្វើជាប្រចាំ (មាន Content Calendar)",
+    "និយមន័យ_Hook": "ផ្នែកដំបូងបំផុតនៃវីដេអូ (២-៣វិនាទីដំបូង) ដែលទាក់ទាញអារម្មណ៍ឲ្យបន្តមើលទៀត",
+    "រយៈពេល_Average_Viewer_ចាប់អារម្មណ៍": "លើសពី ៥០% នៃរយៈពេលវីដេអូទាំងមូល"
+  };
+
+  // សំណួរដែលជា Self-rating scale (១-៥)
+  const SELF_RATING_FIELDS = [
+    "កម្រិតវាយតម្លៃខ្លួនឯង_FB_Ads",
+    "កម្រិត_បទពិសោធន៍_Boosting",
+    "កម្រិត_វាយតម្លៃ_Boosting_Campaign",
+    "កម្រិត_វាយតម្លៃគុណភាព_Content"
+  ];
+
+  function calculateScore() {
+    let correct = 0;
+    const totalKnowledge = Object.keys(KNOWLEDGE_ANSWERS).length;
+    for (const field in KNOWLEDGE_ANSWERS) {
+      const checked = form.querySelector(`input[name="${field}"]:checked`);
+      if (checked && checked.value === KNOWLEDGE_ANSWERS[field]) correct++;
+    }
+
+    let selfSum = 0;
+    SELF_RATING_FIELDS.forEach(field => {
+      const checked = form.querySelector(`input[name="${field}"]:checked`);
+      selfSum += checked ? parseInt(checked.value, 10) : 0;
+    });
+    const selfMax = SELF_RATING_FIELDS.length * 5;
+
+    const knowledgePct = (correct / totalKnowledge) * 100;
+    const selfPct = (selfSum / selfMax) * 100;
+    // ទម្ងន់៖ ចំណេះដឹង ៧០% + វាយតម្លៃខ្លួនឯង ៣០%
+    const overall = Math.round(knowledgePct * 0.7 + selfPct * 0.3);
+
+    let level, levelClass;
+    if (overall >= 75) { level = "ល្អ (Good)"; levelClass = "good"; }
+    else if (overall >= 50) { level = "មធ្យម (Fair)"; levelClass = "fair"; }
+    else { level = "ខ្សោយ (Poor)"; levelClass = "poor"; }
+
+    return { correct, totalKnowledge, selfSum, selfMax, overall, level, levelClass };
+  }
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     statusMsg.textContent = '';
@@ -626,8 +739,14 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'កំពុងបញ្ជូន...';
 
+    const score = calculateScore();
+
     const formData = new FormData(form);
     formData.append('ពេលវេលាដាក់ស្នើ', new Date().toLocaleString('km-KH'));
+    formData.append('ចំណេះដឹងត្រឹមត្រូវ', `${score.correct}/${score.totalKnowledge}`);
+    formData.append('ពិន្ទុវាយតម្លៃខ្លួនឯង', `${score.selfSum}/${score.selfMax}`);
+    formData.append('ពិន្ទុសរុប_ភាគរយ', `${score.overall}%`);
+    formData.append('កម្រិតវាយតម្លៃ', score.level);
 
     try {
       await fetch(SCRIPT_URL, {
@@ -636,6 +755,17 @@
         body: formData
       });
       // no-cors means we can't read the response — assume success
+      document.getElementById('scorePercent').textContent = score.overall + '%';
+      const levelEl = document.getElementById('scoreLevel');
+      levelEl.textContent = score.level;
+      levelEl.className = 'score-level ' + score.levelClass;
+      document.getElementById('scoreCheck').style.background =
+        score.levelClass === 'good' ? '#2f7a52' : score.levelClass === 'fair' ? '#c98a1f' : '#b3452f';
+      document.getElementById('scoreCheck').textContent =
+        score.levelClass === 'good' ? '✓' : score.levelClass === 'fair' ? '!' : '✕';
+      document.getElementById('scoreKnowledge').textContent = `${score.correct}/${score.totalKnowledge} ត្រឹមត្រូវ`;
+      document.getElementById('scoreSelfRating').textContent = `${score.selfSum}/${score.selfMax}`;
+
       form.style.display = 'none';
       document.getElementById('successScreen').style.display = 'block';
       document.getElementById('successScreen').scrollIntoView({behavior:'smooth'});
